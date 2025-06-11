@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Estates | Premium Real Estate Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="https://i.ibb.co/HTqFJc5W/cropped-circle-image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-slide {
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .feature-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .filter-option:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 w-full">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div
+                    class="w-12 h-12 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center text-white font-bold text-xl">
+                    LE</div>
+                <h1 class="ml-3 text-2xl font-bold text-gray-800">LUXE <span class="text-blue-600">ESTATES</span></h1>
+            </div>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="#featured"
+                    class="nav-link text-gray-700 hover:text-blue-600 font-medium transition duration-300">Featured</a>
+                <a href="#properties"
+                    class="nav-link text-gray-700 hover:text-blue-600 font-medium transition duration-300">Properties</a>
+                <a href="#about"
+                    class="nav-link text-gray-700 hover:text-blue-600 font-medium transition duration-300">About</a>
+                <a href="#contact"
+                    class="nav-link text-gray-700 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+            </nav>
+
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full absolute left-0 shadow-lg">
+            <div class="container mx-auto px-4 py-2 flex flex-col">
+                <a href="#featured" class="py-2 text-gray-700 hover:text-blue-600 border-b">Featured</a>
+                <a href="#properties" class="py-2 text-gray-700 hover:text-blue-600 border-b">Properties</a>
+                <a href="#about" class="py-2 text-gray-700 hover:text-blue-600 border-b">About</a>
+                <a href="#contact" class="py-2 text-gray-700 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-slate-50 to-blue-50 py-16 md:py-24 hero-overlay">
+        <div class="container px-4 max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+                <!-- Left Side - Text Content -->
+                <div class="lg:w-1/2 space-y-8">
+                    <div class="fade-in">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 mb-6 leading-tight">
+                            Find Your
+                            <span class="text-blue-600 relative">
+                                Dream Property
+                                <div class="absolute -bottom-2 left-0 w-full h-1 bg-blue-200 rounded"></div>
+                            </span>
+                            Today
+                        </h1>
+                    </div>
+
+                    <div class="fade-in stagger-animation">
+                        <p class="text-xl text-slate-600 mb-8 leading-relaxed max-w-lg">
+                            We specialize in premium residential and commercial properties in the most sought-after
+                            locations. Your perfect home awaits.
+                        </p>
+                    </div>
+
+                    <div class="fade-in stagger-animation-2 flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="btn-primary text-black font-semibold px-8 py-4 rounded-lg inline-flex items-center justify-center group">
+                            Browse Properties
+                            <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+
+                        <button
+                            class="border-2 border-slate-300 text-slate-700 font-semibold px-8 py-4 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-300 inline-flex items-center justify-center">
+                            <i class="fas fa-play mr-3"></i>
+                            Watch Tour
+                        </button>
+                    </div>
+
+                    <!-- Stats Section -->
+                    <div
+                        class="fade-in stagger-animation-2 grid grid-cols-3 gap-6 md:ml-[-55px] ml-0 pt-8 border-t border-slate-200">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-800">500+</div>
+                            <div class="text-sm text-slate-600">Properties Sold</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-800">98%</div>
+                            <div class="text-sm text-slate-600">Client Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-slate-800">15+</div>
+                            <div class="text-sm text-slate-600">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Enhanced Carousel -->
+                <div class="lg:w-1/2 w-full">
+                    <div class="relative">
+                        <!-- Main Carousel Container -->
+                        <div class="relative overflow-hidden rounded shadow-2xl bg-white">
+                            <div class="property-carousel flex transition-transform duration-700 ease-in-out"
+                                id="carousel">
+                                <div class="w-full flex-shrink-0 relative">
+                                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                        alt="Luxury Property" class="w-full h-72 md:h-96 object-cover rounded-xl">
+
+                                </div>
+
+                                <div class="w-full flex-shrink-0 relative">
+                                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                        alt="Modern Home" class="w-full h-72 md:h-96 object-cover rounded-xl">
+
+                                </div>
+
+                                <div class="w-full flex-shrink-0 relative">
+                                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                        alt="Beautiful Interior" class="w-full h-72 md:h-96 object-cover rounded-xl">
+
+                                </div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
+                            <button
+                                class="carousel-btn carousel-prev absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-blue-600">
+                                <i class="fas fa-chevron-left text-lg"></i>
+                            </button>
+                            <button
+                                class="carousel-btn carousel-next absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-blue-600">
+                                <i class="fas fa-chevron-right text-lg"></i>
+                            </button>
+                        </div>
+
+                        <!-- Indicators -->
+                        <div class="flex justify-center space-x-3 mt-6">
+                            <button
+                                class="carousel-indicator w-3 h-3 rounded-full bg-slate-300 indicator-active transition-all duration-300"
+                                data-slide="0"></button>
+                            <button
+                                class="carousel-indicator w-3 h-3 rounded-full bg-slate-300 transition-all duration-300"
+                                data-slide="1"></button>
+                            <button
+                                class="carousel-indicator w-3 h-3 rounded-full bg-slate-300 transition-all duration-300"
+                                data-slide="2"></button>
+                        </div>
+
+                        <!-- Floating Elements -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 bg-blue-100 rounded-full opacity-20"></div>
+                        <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-100 rounded-full opacity-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section id="featured" class="py-16 mx-2 md:mx-10 bg-white">
+        <div class="container  px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Properties</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Featured Property 1 -->
+                <div
+                    class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Luxury Villa" class="w-full h-64 object-cover">
+                        <div
+                            class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Featured</div>
+                        <div class="absolute top-4 right-4 bg-white text-blue-600 p-2 rounded-full">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Luxury Villa in Beverly Hills</h3>
+                            <span class="text-blue-600 font-bold">$5,200,000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i> Los
+                            Angeles, CA</p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-bed text-blue-500 mr-1"></i> 5 Beds</span>
+                            <span><i class="fas fa-bath text-blue-500 mr-1"></i> 6 Baths</span>
+                            <span><i class="fas fa-vector-square text-blue-500 mr-1"></i> 8500 sq.ft</span>
+                        </div>
+                        <button
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <!-- Featured Property 2 -->
+                <div
+                    class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Modern Apartment" class="w-full h-64 object-cover">
+                        <div
+                            class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Featured</div>
+                        <div class="absolute top-4 right-4 bg-white text-blue-600 p-2 rounded-full">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Modern Apartment in Downtown</h3>
+                            <span class="text-blue-600 font-bold">$1,800,000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i> New York,
+                            NY</p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-bed text-blue-500 mr-1"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath text-blue-500 mr-1"></i> 2 Baths</span>
+                            <span><i class="fas fa-vector-square text-blue-500 mr-1"></i> 1850 sq.ft</span>
+                        </div>
+                        <button
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <!-- Featured Property 3 -->
+                <div
+                    class="property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-500 hover:shadow-xl">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1605146769289-440113cc3d00?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Waterfront Mansion" class="w-full h-64 object-cover">
+                        <div
+                            class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">
+                            Featured</div>
+                        <div class="absolute top-4 right-4 bg-white text-blue-600 p-2 rounded-full">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Waterfront Mansion in Miami</h3>
+                            <span class="text-blue-600 font-bold">$7,500,000</span>
+                        </div>
+                        <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i> Miami, FL
+                        </p>
+                        <div class="flex justify-between text-sm text-gray-500 mb-4">
+                            <span><i class="fas fa-bed text-blue-500 mr-1"></i> 6 Beds</span>
+                            <span><i class="fas fa-bath text-blue-500 mr-1"></i> 7 Baths</span>
+                            <span><i class="fas fa-vector-square text-blue-500 mr-1"></i> 12000 sq.ft</span>
+                        </div>
+                        <button
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section with Filter -->
+    <section class="container mx-auto  px-4 py-12">
+        <div class="container mx-auto">
+            <!-- Filter Section -->
+            <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Property Type</label>
+                        <select id="propertyType"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Types</option>
+                            <option value="House">House</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Plot">Plot</option>
+                            <option value="Commercial">Commercial</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Location</label>
+                        <select id="location"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Locations</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="New York">New York</option>
+                            <option value="Miami">Miami</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="San Francisco">San Francisco</option>
+                            <option value="Austin">Austin</option>
+                            <option value="Seattle">Seattle</option>
+                            <option value="Denver">Denver</option>
+                            <option value="Beverly Hills">Beverly Hills</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Price Range</label>
+                        <select id="priceRange"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="all">All Prices</option>
+                            <option value="0-500000">$0 - $500,000</option>
+                            <option value="500000-1000000">$500,000 - $1,000,000</option>
+                            <option value="1000000-5000000">$1,000,000 - $5,000,000</option>
+                            <option value="5000000+">$5,000,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="flex items-end">
+                        <button id="searchButton"
+                            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300 flex items-center justify-center">
+                            <i class="fas fa-search mr-2"></i> Search
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Grid -->
+            <div id="propertyGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Properties will be dynamically filtered here -->
+            </div>
+
+            <div class="mt-10 text-center">
+                <button
+                    class="bg-white border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition duration-300">
+                    Load More Properties
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                        alt="About Us" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">About Luxe Estates</h2>
+                    <div class="w-20 h-1 bg-blue-600 mb-6"></div>
+                    <p class="text-gray-600 mb-6">Founded in 2010, Luxe Estates has established itself as a
+                        leading real estate company specializing in premium residential and commercial
+                        properties. Our team of dedicated professionals combines local market knowledge with
+                        global expertise to deliver exceptional service.</p>
+
+                    <div class="mb-4">
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-1">10+ Years Experience</h3>
+                                <p class="text-gray-600">Decades of combined experience in luxury real estate
+                                    markets.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start mb-4">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-1">500+ Happy Clients</h3>
+                                <p class="text-gray-600">We&apos;ve helped hundreds of families find their dream
+                                    homes.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-check text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-800 mb-1">Award-Winning Service</h3>
+                                <p class="text-gray-600">Recognized for excellence in customer service and
+                                    satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 inline-flex items-center mt-4">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md relative">
+                    <div
+                        class="absolute -top-4 -left-4 bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"Luxe Estates made the entire home buying process seamless.
+                        Their attention to detail and market knowledge helped us find our perfect home in
+                        Beverly Hills."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">Homeowner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md relative">
+                    <div
+                        class="absolute -top-4 -left-4 bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"As an investor, I&apos;ve worked with many real estate firms, but
+                        none have matched Luxe Estates&apos; professionalism and results. They secured me a property
+                        that&apos;s appreciated 35% in 2 years."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">Investor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md relative">
+                    <div
+                        class="absolute -top-4 -left-4 bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">"The team at Luxe Estates went above and beyond to find us our
+                        dream vacation home in Miami. Their network and negotiation skills saved us thousands."
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Emily Rodriguez</h4>
+                            <p class="text-gray-500 text-sm">Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Detail Modal -->
+    <div id="property-modal" class="fixed inset-0 z-50 overflow-y-auto hidden">
+        <div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-6xl sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="flex justify-between items-center border-b pb-4">
+                        <h3 class="text-2xl font-bold text-gray-800">Luxury Villa in Beverly Hills</h3>
+                        <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Carousel -->
+                        <div class="relative">
+                            <div id="property-carousel" class="overflow-hidden rounded-lg">
+                                <div class="carousel-slide flex transition-transform duration-300">
+                                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                        alt="Villa Exterior" class="w-full h-80 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                        alt="Villa Living Room" class="w-full h-80 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                        alt="Villa Kitchen" class="w-full h-80 object-cover">
+                                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                        alt="Villa Bedroom" class="w-full h-80 object-cover">
+                                </div>
+                            </div>
+                            <div class="flex justify-center mt-4 space-x-2">
+                                <button
+                                    class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 focus:outline-none"></button>
+                                <button
+                                    class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 focus:outline-none"></button>
+                                <button
+                                    class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 focus:outline-none"></button>
+                                <button
+                                    class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-blue-600 focus:outline-none"></button>
+                            </div>
+                            <button id="prev-btn"
+                                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 ml-4">
+                                <i class="fas fa-chevron-left text-gray-700"></i>
+                            </button>
+                            <button id="next-btn"
+                                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-gray-100 mr-4">
+                                <i class="fas fa-chevron-right text-gray-700"></i>
+                            </button>
+                        </div>
+
+                        <!-- Property Details -->
+                        <div>
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-2xl font-bold text-blue-600">$5,200,000</span>
+                                    <span
+                                        class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">For
+                                        Sale</span>
+                                </div>
+
+                                <div class="flex flex-wrap gap-4 mb-6">
+                                    <div class="flex items-center">
+                                        <i class="fas fa-bed text-blue-500 mr-2"></i>
+                                        <span class="text-gray-700">5 Bedrooms</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-bath text-blue-500 mr-2"></i>
+                                        <span class="text-gray-700">6 Bathrooms</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-ruler-combined text-blue-500 mr-2"></i>
+                                        <span class="text-gray-700">8500 sq.ft</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <i class="fas fa-car text-blue-500 mr-2"></i>
+                                        <span class="text-gray-700">4 Parking</span>
+                                    </div>
+                                </div>
+
+                                <div class="mb-6">
+                                    <h4 class="font-semibold text-gray-800 mb-2">Location</h4>
+                                    <p class="text-gray-600"><i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>
+                                        456 Sunset
+                                        Blvd, Beverly Hills, CA 90210</p>
+
+                                    <div class="mt-4 h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-map-marked-alt text-gray-400 text-4xl"></i>
+                                        <p class="ml-3 text-gray-600">Google Maps integration would go here</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex space-x-4">
+                                    <button
+                                        class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg transition duration-300 flex items-center justify-center">
+                                        <i class="fas fa-phone-alt mr-2"></i> Call
+                                    </button>
+                                    <button
+                                        class="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg transition duration-300 flex items-center justify-center">
+                                        <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Property Description -->
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-800 text-xl mb-3">Property Description</h4>
+                        <p class="text-gray-600 mb-4">
+                            This stunning luxury villa is located in the prestigious neighborhood of Beverly
+                            Hills. The property boasts an expansive 8,500 square feet of living space with
+                            breathtaking views of the city skyline.
+                        </p>
+                        <p class="text-gray-600 mb-4">
+                            The home features 5 spacious bedrooms, each with en-suite bathrooms, a gourmet
+                            kitchen with high-end appliances, a state-of-the-art home theater, a wine cellar,
+                            and a rooftop terrace perfect for entertaining. The exterior includes a resort-style
+                            pool, spa, and meticulously landscaped gardens.
+                        </p>
+                        <p class="text-gray-600">
+                            Located within walking distance to renowned restaurants, shopping, and entertainment
+                            venues, this property offers the ultimate in luxury living in one of the most
+                            desirable locations in Los Angeles.
+                        </p>
+                    </div>
+
+                    <!-- Key Features -->
+                    <div class="mt-8">
+                        <h4 class="font-semibold text-gray-800 text-xl mb-3">Key Features</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Smart Home Automation</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Home Theater</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Wine Cellar</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Rooftop Terrace</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Infinity Pool</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-2"></i>
+                                <span class="text-gray-700">Walk-in Closets</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="mt-8 border-t pt-6">
+                        <h4 class="font-semibold text-gray-800 text-xl mb-4">Inquire About This Property</h4>
+                        <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Full Name</label>
+                                <input type="text"
+                                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Email
+                                    Address</label>
+                                <input type="email"
+                                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Phone Number</label>
+                                <input type="tel"
+                                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Preferred Contact
+                                    Method</label>
+                                <select
+                                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>Phone Call</option>
+                                    <option>Email</option>
+                                    <option>WhatsApp</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 text-sm font-medium mb-1">Message</label>
+                                <textarea rows="4"
+                                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <div class="md:col-span-2">
+                                <button type="submit"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg font-medium transition duration-300">Send
+                                    Inquiry</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-r from-blue-800 to-purple-700 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-white mx-auto"></div>
+                <p class="mt-4 max-w-2xl mx-auto">Have questions about a property or our services? Contact our
+                    team today for a consultation.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Our Office</h3>
+                    <p class="text-blue-100">123 Real Estate Avenue, Suite 500<br>Los Angeles, CA 90067</p>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-phone-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Phone</h3>
+                    <p class="text-blue-100">Main: (310) 555-1234<br>
+                        Sales: (310) 555-5678</p>
+                </div>
+
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-white bg-opacity-20 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Email</h3>
+                    <p class="text-blue-100">info@luxeestates.com<br>
+                        sales@luxeestates.com</p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-white rounded-lg shadow-xl p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Send Us a Message</h3>
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Full Name</label>
+                        <input type="text"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Email Address</label>
+                        <input type="email"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Subject</label>
+                        <input type="text"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Phone Number</label>
+                        <input type="tel"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-gray-700 text-sm font-medium mb-1">Message</label>
+                        <textarea rows="4"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit"
+                            class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3 px-10 rounded-lg font-medium transition duration-300 inline-flex items-center">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 flex items-center justify-center text-white font-bold text-sm">
+                            LE</div>
+                        <h3 class="ml-3 text-xl font-bold text-white">LUXE <span class="text-blue-400">ESTATES</span>
+                        </h3>
+                    </div>
+                    <p class="mb-4">Premium real estate services for discerning clients. We help you find
+                        properties that match your aspirations and lifestyle.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#featured" class="hover:text-white transition duration-300">Featured
+                                Properties</a></li>
+                        <li><a href="#properties" class="hover:text-white transition duration-300">Browse
+                                Properties</a></li>
+                        <li><a href="#about" class="hover:text-white transition duration-300">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition duration-300">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">Property Types</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition duration-300">Residential</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Commercial</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Luxury Homes</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Vacation Properties</a>
+                        </li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Land Plots</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold text-lg mb-4">Newsletter</h4>
+                    <p class="mb-4">Subscribe to our newsletter for the latest property listings and real estate
+                        news.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your Email"
+                            class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Luxe Estates. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hero Carousel
+        const heroCarousel = document.querySelector('.property-carousel');
+        const heroSlides = document.querySelectorAll('.property-carousel img');
+        const heroPrevBtn = document.querySelector('.carousel-prev');
+        const heroNextBtn = document.querySelector('.carousel-next');
+        const heroIndicators = document.querySelectorAll('.carousel-indicator');
+        let heroCurrentIndex = 0;
+
+        function updateHeroCarousel() {
+            const slideWidth = heroSlides[0].clientWidth;
+            heroCarousel.style.transform = `translateX(-${heroCurrentIndex * slideWidth}px)`;
+
+            heroIndicators.forEach((indicator, index) => {
+                indicator.classList.toggle('bg-blue-500', index === heroCurrentIndex);
+                indicator.classList.toggle('border-gray-300', index !== heroCurrentIndex);
+            });
+        }
+
+        heroNextBtn.addEventListener('click', () => {
+            heroCurrentIndex = (heroCurrentIndex + 1) % heroSlides.length;
+            updateHeroCarousel();
+        });
+
+        heroPrevBtn.addEventListener('click', () => {
+            heroCurrentIndex = (heroCurrentIndex - 1 + heroSlides.length) % heroSlides.length;
+            updateHeroCarousel();
+        });
+
+        heroIndicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                heroCurrentIndex = index;
+                updateHeroCarousel();
+            });
+        });
+
+        // Auto-advance hero carousel
+        let heroIntervalId = setInterval(() => {
+            heroCurrentIndex = (heroCurrentIndex + 1) % heroSlides.length;
+            updateHeroCarousel();
+        }, 5000);
+
+        // Pause on hover
+        heroCarousel.addEventListener('mouseenter', () => {
+            clearInterval(heroIntervalId);
+        });
+
+        heroCarousel.addEventListener('mouseleave', () => {
+            heroIntervalId = setInterval(() => {
+                heroCurrentIndex = (heroCurrentIndex + 1) % heroSlides.length;
+                updateHeroCarousel();
+            }, 5000);
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Property modal functionality
+        const propertyCards = document.querySelectorAll('.property-card');
+        const propertyModal = document.getElementById('property-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        propertyCards.forEach(card => {
+            card.addEventListener('click', () => {
+                propertyModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            propertyModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        });
+
+        // Carousel functionality
+        const carousel = document.querySelector('.carousel-slide');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slide img');
+
+        function updateCarousel() {
+            const slideWidth = slides[0].clientWidth;
+            carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+
+            // Update indicators
+            indicators.forEach((indicator, index) => {
+                if (index === currentIndex) {
+                    indicator.classList.add('bg-blue-600');
+                    indicator.classList.remove('bg-gray-300');
+                } else {
+                    indicator.classList.remove('bg-blue-600');
+                    indicator.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = slides.length - 1;
+            }
+            updateCarousel();
+        });
+
+        // Click on indicator to go to specific slide
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+
+        // Auto-advance carousel
+        let intervalId = setInterval(() => {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        }, 5000);
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(intervalId);
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            intervalId = setInterval(() => {
+                if (currentIndex < slides.length - 1) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }, 5000);
+        });
+
+        // Property data
+        const properties = [
+            {
+                id: 1,
+                title: "Modern Family Home",
+                type: "House",
+                location: "Beverly Hills, CA",
+                city: "Beverly Hills",
+                price: 2450000,
+                beds: 4,
+                baths: 3,
+                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                status: "For Sale",
+                posted: "5 days ago"
+            },
+            {
+                id: 2,
+                title: "Downtown Loft",
+                type: "Apartment",
+                location: "New York, NY",
+                city: "New York",
+                price: 1250000,
+                beds: 2,
+                baths: 2,
+                image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                status: "For Sale",
+                posted: "1 week ago"
+            },
+            {
+                id: 3,
+                title: "Luxury Apartment",
+                type: "Apartment",
+                location: "Chicago, IL",
+                city: "Chicago",
+                price: 850000,
+                beds: 3,
+                baths: 2,
+                image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                status: "For Sale",
+                posted: "2 weeks ago"
+            },
+            {
+                id: 4,
+                title: "Waterfront Villa",
+                type: "House",
+                location: "Miami, FL",
+                city: "Miami",
+                price: 3750000,
+                beds: 5,
+                baths: 4,
+                image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                status: "For Sale",
+                posted: "3 days ago"
+            },
+            {
+                id: 5,
+                title: "Penthouse Suite",
+                type: "Apartment",
+                location: "San Francisco, CA",
+                city: "San Francisco",
+                price: 4200000,
+                beds: 4,
+                baths: 3,
+                image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                status: "For Sale",
+                posted: "1 day ago"
+            },
+            {
+                id: 6,
+                title: "Suburban Home",
+                type: "House",
+                location: "Austin, TX",
+                city: "Austin",
+                price: 950000,
+                beds: 3,
+                baths: 2,
+                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                status: "For Sale",
+                posted: "2 days ago"
+            },
+            {
+                id: 7,
+                title: "Urban Condo",
+                type: "Apartment",
+                location: "Seattle, WA",
+                city: "Seattle",
+                price: 1050000,
+                beds: 2,
+                baths: 2,
+                image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                status: "For Sale",
+                posted: "3 weeks ago"
+            },
+            {
+                id: 8,
+                title: "Countryside Estate",
+                type: "House",
+                location: "Denver, CO",
+                city: "Denver",
+                price: 2850000,
+                beds: 6,
+                baths: 5,
+                image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+                status: "For Sale",
+                posted: "1 month ago"
+            }
+        ];
+
+        // Function to render properties
+        function renderProperties(filteredProperties = properties) {
+            const propertyGrid = document.getElementById('propertyGrid');
+            propertyGrid.innerHTML = '';
+
+            filteredProperties.forEach(property => {
+                const propertyCard = document.createElement('div');
+                propertyCard.className = 'property-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300';
+                propertyCard.innerHTML = `
+                    <div class="relative">
+                        <img src="${property.image}" alt="${property.title}" class="w-full h-48 object-cover">
+                        <div class="absolute top-4 right-4 bg-white text-blue-600 p-2 rounded-full">
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-600 text-sm font-semibold">${property.status}</span>
+                            <span class="text-gray-500 text-sm">${property.posted}</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 mt-2 mb-1">${property.title}</h3>
+                        <p class="text-gray-600 text-sm"><i class="fas fa-map-marker-alt text-blue-500 mr-1"></i> ${property.location}</p>
+                        <div class="flex justify-between items-center mt-3">
+                            <span class="text-blue-600 font-bold">$${property.price.toLocaleString()}</span>
+                            <div class="flex text-xs text-gray-500">
+                                <span class="mr-2"><i class="fas fa-bed mr-1"></i> ${property.beds}</span>
+                                <span><i class="fas fa-bath mr-1"></i> ${property.baths}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                propertyGrid.appendChild(propertyCard);
+            });
+        }
+
+        // Function to filter properties
+        function filterProperties() {
+            const propertyType = document.getElementById('propertyType').value;
+            const location = document.getElementById('location').value;
+            const priceRange = document.getElementById('priceRange').value;
+
+            let filtered = [...properties];
+
+            // Filter by property type
+            if (propertyType !== 'all') {
+                filtered = filtered.filter(property => property.type === propertyType);
+            }
+
+            // Filter by location
+            if (location !== 'all') {
+                filtered = filtered.filter(property => property.city === location);
+            }
+
+            // Filter by price range
+            if (priceRange !== 'all') {
+                const [min, max] = priceRange.includes('+')
+                    ? [5000000, Infinity]
+                    : priceRange.split('-').map(Number);
+
+                filtered = filtered.filter(property => {
+                    if (priceRange === '5000000+') {
+                        return property.price >= min;
+                    } else {
+                        return property.price >= min && property.price <= max;
+                    }
+                });
+            }
+
+            renderProperties(filtered);
+        }
+
+        // Event listeners
+        document.getElementById('searchButton').addEventListener('click', filterProperties);
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProperties();
+        });
+    </script>
+</body>
+
+</html>
