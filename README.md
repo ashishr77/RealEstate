@@ -2,7 +2,7 @@
 
 A modern, responsive real estate property listing website built with **HTML, CSS, JavaScript, and Tailwind CSS**. Features dynamic filtering, a clean UI, and mobile-friendly design.
 
-![Project Screenshot](https://i.ibb.co/ZRWYvnLC/realestate.png) *(Replace with your screenshot)*
+![Project Screenshot](https://i.ibb.co/ZRWYvnLC/realestate.png) 
 
 ## 🚀 Live Demo  
 [View Demo](https://theluxeestate.vercel.app/) 
